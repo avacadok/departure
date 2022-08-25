@@ -11,7 +11,7 @@ const Navbar = (props) => {
           <li><a href="#">Accessories</a></li>
         </ul>
       </nav>
-      <a className="contact" href="#"><button>Log in</button></a>
+      <a className="login" href="#"><button>Log in</button></a>
     </header>
   )
 }

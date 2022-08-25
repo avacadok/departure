@@ -7,7 +7,7 @@ $bgcolor: rgb(255, 255, 255);
   background-color: #f3f3f3;
 }
 
-header{
+header {
   display: flex;
   background-color: $bgcolor;
   justify-content: space-between;
@@ -23,17 +23,18 @@ header{
     cursor: pointer;
   }
 
-  li, a, button {
-    font-family: 'Noto Sans JP', sans-serif;
-    font-weight: 500;
-    font-size: 16px;
+  li,
+  a,
+  button {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 800;
     background-color: $bgcolor;
   }
 
   .nav_links {
     list-style: none;
     background-color: $bgcolor;
-    
+
     li {
       display: inline-block;
       padding: 0px 20px;
@@ -44,26 +45,47 @@ header{
       text-decoration: none;
       color: #000;
     }
-
-    li a:hover {
-      color: #384548;
-    }
   }
 
   button {
     border: none;
     cursor: pointer;
-    border-radius: 50px;
-    padding: 10px 15px;
-    color: $bgcolor;
-    background-color: #000;
+    font-size: medium;
     transition: all 0.3s ease 0s;
   }
 
-  button:hover {
-    background-color: #303d40;
+  .login {
+    position: relative;
+  }
+  
+  .login:after,
+  .login:before {
+    transition: all .5s;
   }
 
+  li a:after,
+  li a:before {
+    transition: all .5s;
+  }
 
+  li a {
+    position: relative;
+  }
+
+  a:after {
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 0%;
+    content: '.';
+    color: transparent;
+    background: #333;
+    height: 1px;
+  }
+
+  a:hover:after {
+    width: 100%;
+  }
 }
-

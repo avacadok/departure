@@ -29,10 +29,11 @@ header .logo {
   cursor: pointer;
 }
 
-header li, header a, header button {
-  font-family: 'Noto Sans JP', sans-serif;
-  font-weight: 500;
-  font-size: 16px;
+header li,
+header a,
+header button {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 800;
   background-color: white;
 }
 
@@ -53,22 +54,48 @@ header .nav_links li a {
   color: #000;
 }
 
-header .nav_links li a:hover {
-  color: #384548;
-}
-
 header button {
   border: none;
   cursor: pointer;
-  border-radius: 50px;
-  padding: 10px 15px;
-  color: white;
-  background-color: #000;
+  font-size: medium;
   -webkit-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
 }
 
-header button:hover {
-  background-color: #303d40;
+header .login {
+  position: relative;
+}
+
+header .login:after,
+header .login:before {
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+header li a:after,
+header li a:before {
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+header li a {
+  position: relative;
+}
+
+header a:after {
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 0%;
+  content: '.';
+  color: transparent;
+  background: #333;
+  height: 1px;
+}
+
+header a:hover:after {
+  width: 100%;
 }
 /*# sourceMappingURL=App.css.map */
