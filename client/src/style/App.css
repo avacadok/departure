@@ -1,0 +1,74 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background-color: #f3f3f3;
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: white;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20px;
+}
+
+header .logo {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 900;
+  background: #000;
+  padding: 3px 8px 5px 8px;
+  color: white;
+  cursor: pointer;
+}
+
+header li, header a, header button {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  background-color: white;
+}
+
+header .nav_links {
+  list-style: none;
+  background-color: white;
+}
+
+header .nav_links li {
+  display: inline-block;
+  padding: 0px 20px;
+}
+
+header .nav_links li a {
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  text-decoration: none;
+  color: #000;
+}
+
+header .nav_links li a:hover {
+  color: #384548;
+}
+
+header button {
+  border: none;
+  cursor: pointer;
+  border-radius: 50px;
+  padding: 9px 20px;
+  color: white;
+  background-color: #000;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+header button:hover {
+  background-color: #303d40;
+}
+/*# sourceMappingURL=App.css.map */
