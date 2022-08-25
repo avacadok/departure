@@ -61,7 +61,7 @@ header button {
   border: none;
   cursor: pointer;
   border-radius: 50px;
-  padding: 9px 20px;
+  padding: 10px 15px;
   color: white;
   background-color: #000;
   -webkit-transition: all 0.3s ease 0s;
