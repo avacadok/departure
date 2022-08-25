@@ -22,3 +22,7 @@
 ### order_items 
 ### products 
 ### product_pictures 
+### product_variants
+
+## Stretch
+- dark mode
