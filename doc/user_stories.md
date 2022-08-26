@@ -25,4 +25,8 @@
 ### product_variants
 
 ## Stretch
+- users can login and logout
+- add item to carts and checkout with Stripe
 - dark mode
+- user authentication 
+- bcrypt password
