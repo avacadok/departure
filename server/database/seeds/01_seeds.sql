@@ -10,8 +10,8 @@ VALUES
 
 INSERT INTO product_pictures (product_id, url, is_thumbnail)
 VALUES 
-(1, 'https://imgur.com/L1xjbkY', true),
-(1, 'https://imgur.com/fQE4dTf', false),
-(1, 'https://imgur.com/nijLtiy', false),
-(1, 'https://imgur.com/cXt9LQE', false),
-(1, 'https://imgur.com/sxQcU8E', false);
+(1, 'https://imgur.com/L1xjbkY.png', true),
+(1, 'https://imgur.com/fQE4dTf.png', false),
+(1, 'https://imgur.com/nijLtiy.png', false),
+(1, 'https://imgur.com/cXt9LQE.png', false),
+(1, 'https://imgur.com/sxQcU8E.png', false);
