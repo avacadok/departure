@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from 'react-router-dom';
 
 const LandingPage = () => {
   return (
@@ -10,7 +11,7 @@ const LandingPage = () => {
           TRAVEL WITH YOUR FUR BABY
         </h1>
         <h2 className="mainpage-shop">
-          SHOP DEPAWTURE
+          <Link to='/new-arrivals' className="shop-depawture">SHOP DEPAWTURE</Link>
         </h2>
       </div>
     </section>
