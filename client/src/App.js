@@ -7,9 +7,9 @@ function App() {
   const [data, setData] = useState({});
 
   useEffect(() => {
-    axios.get('/api')
+    axios.get('/api/new-arrivals')
       .then((res) => {
-        console.log("res", res);
+        console.log("res", res.data);
       })
       .catch((err) => console.log("err", err));
   }, []);
@@ -17,7 +17,6 @@ function App() {
   return (
     <div>
       <Navbar />
-
     </div>
   );
 }
