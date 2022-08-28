@@ -3,7 +3,7 @@ import React from "react";
 const LandingPage = () => {
   return (
     <section className="main-page">
-      <img className="main-img" src='https://imgur.com/kny0KIb.png'/>
+      <img className="main-img" src='https://imgur.com/kny0KIb.png' alt="travel-with-pet"/>
 
       <div className="card">
         <h1 className="travel">
