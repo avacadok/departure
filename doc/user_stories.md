@@ -30,3 +30,5 @@
 - dark mode
 - user authentication 
 - bcrypt password
+- @media screen for laptop and mobile
+- user reviews
