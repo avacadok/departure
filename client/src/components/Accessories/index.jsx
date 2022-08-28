@@ -3,7 +3,7 @@ import React from "react";
 const Accessories = () => {
   return(
     <>
-    <h3>Accessories</h3>
+    <h3 className="page-title">Accessories</h3>
     </>
   )
 }

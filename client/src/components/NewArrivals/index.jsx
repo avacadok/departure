@@ -3,7 +3,7 @@ import React from "react";
 const NewArrivals = () => {
   return(
     <>
-    <h3>New Arrivals</h3>
+    <h3 className="page-title">New Arrivals</h3>
     </>
   )
 }
