@@ -14,16 +14,16 @@ const Accessories = () => {
   }, []);
   console.log("accessories", accessories)
 
-  const AccessoriesDetail = Object.values(accessories).map((accessories, index) => {
+  const AccessoriesDetail = Object.values(accessories).map((accessory, index) => {
     return (
       <Product
         key={index}
-        name={accessories.name}
-        color={accessories.color}
-        material={accessories.material}
-        description={accessories.description}
-        price={accessories.price_cents}
-        photos={accessories.list_of_pictures} />
+        name={accessory.name}
+        color={accessory.color}
+        material={accessory.material}
+        description={accessory.description}
+        price={accessory.price_cents}
+        photos={accessory.list_of_pictures} />
     )
   })
 

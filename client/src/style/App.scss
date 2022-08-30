@@ -226,7 +226,7 @@ footer {
   display: grid;
   gap: 1rem;
   grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-  padding: 25px 20px 25px 20px;
+  padding: 30px 30px 30px 30px;
   background-color: $maincolor;
 
 }
@@ -236,10 +236,11 @@ footer {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 1px;
-  border-style: groove;
-  border-color: #000;
+  // border: 1px;
+  // border-style: groove;
+  // border-color: #000;
   margin: auto;
+  // box-shadow: 3px 2px 2px 2px rgb(196, 193, 188);
 
   .product-img img {
     width: 100%;

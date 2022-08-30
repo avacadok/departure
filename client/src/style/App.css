@@ -259,7 +259,7 @@ footer .footer-content p {
   gap: 1rem;
   -ms-grid-columns: (minmax(500px, 1fr))[auto-fit];
       grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-  padding: 25px 20px 25px 20px;
+  padding: 30px 30px 30px 30px;
   background-color: #f3ebdb;
 }
 
@@ -277,9 +277,6 @@ footer .footer-content p {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border: 1px;
-  border-style: groove;
-  border-color: #000;
   margin: auto;
 }
 
