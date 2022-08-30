@@ -8,22 +8,11 @@ import Bags from './components/Bags';
 import Accessories from './components/Accessories';
 import NewArrivals from './components/NewArrivals';
 
-
 function App() {
-  // const [data, setData] = useState({});
-
   useEffect(() => {
     axios.get('/api/new-arrivals')
       .then((res) => {
         console.log("new-arrivals", res.data);
-      })
-      .catch((err) => console.log("err", err));
-  }, []);
-
-  useEffect(() => {
-    axios.get('/api/bags')
-      .then((res) => {
-        console.log("bags", res.data)
       })
       .catch((err) => console.log("err", err));
   }, []);

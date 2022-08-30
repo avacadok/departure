@@ -1,5 +1,7 @@
 $bgcolor: rgb(255, 255, 255);
-$maincolor: rgb(246, 242, 230);
+$maincolor: #f3ebdb;
+$mainfont: 'IBM Plex Sans',
+sans-serif;
 
 * {
   box-sizing: border-box;
@@ -15,7 +17,7 @@ header {
   align-items: center;
   padding: 20px;
 
-  .logo {
+  .logo .logo-link {
     font-family: 'Noto Sans JP', sans-serif;
     font-weight: 900;
     background: #000;
@@ -23,12 +25,13 @@ header {
     color: $bgcolor;
     cursor: pointer;
     font-size: 1.25rem;
+    text-decoration: none;
   }
 
   li,
   a,
   button {
-    font-family: 'IBM Plex Sans', sans-serif;
+    font-family: $mainfont;
     font-weight: 800;
     background-color: $bgcolor;
   }
@@ -46,13 +49,14 @@ header {
       transition: all 0.3s ease 0s;
       text-decoration: none;
       color: #000;
+      font-size: 1.25rem;
     }
   }
 
   button {
     border: none;
     cursor: pointer;
-    font-size: medium;
+    font-size: 1.25rem;
     transition: all 0.3s ease 0s;
   }
 
@@ -130,6 +134,11 @@ header {
       color: #000;
       padding: 10px 8px 10px 8px;
       cursor: pointer;
+
+      .shop-depawture {
+        text-decoration: none;
+        color: #000;
+      }
     }
   }
 }
@@ -148,7 +157,7 @@ footer {
     text-align: center;
 
     .footer-bottom {
-        padding-bottom: 40px; 
+      padding-bottom: 40px;
     }
 
     .socials {
@@ -159,7 +168,7 @@ footer {
       margin: 1rem 0 2.5rem 0;
 
       li {
-        margin:0 10px;
+        margin: 0 10px;
         cursor: pointer;
         font-size: 1.2rem;
       }
@@ -175,9 +184,11 @@ footer {
       .fa-square-instagram:hover {
         color: rgb(193, 53, 132);
       }
+
       .fa-google-plus:hover {
         color: rgb(76, 139, 245);
       }
+
       .fa-youtube:hover {
         color: rgb(255, 0, 0);
       }
@@ -195,8 +206,61 @@ footer {
   }
 
   .footer-content p {
-    font-family: 'IBM Plex Sans', sans-serif;
+    font-family: $mainfont;
     font-weight: 800;
 
+  }
+}
+
+.page-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 2.5rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  padding: 10px 0px 30px 0px;
+}
+
+.grid-container {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  padding: 25px 20px 25px 20px;
+  background-color: $maincolor;
+
+}
+
+.product-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px;
+  border-style: groove;
+  border-color: #000;
+  margin: auto;
+
+  .product-img img {
+    width: 100%;
+  }
+
+  .product-title {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+
+  .product-color {
+    font-family: $mainfont;
+    font-weight: 800;
+    font-size: 1rem;
+    color: #333;
+    padding: 8px 0px 8px 0px;
+
+  }
+
+  .product-price {
+    padding-bottom: 9px;
   }
 }
