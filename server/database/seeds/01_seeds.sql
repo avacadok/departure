@@ -6,10 +6,12 @@ VALUES
 
 INSERT INTO products (name, description, price_cents, material, size, category, color)
 VALUES 
-('The Pet Carrier', 'The Pet Carrier makes it easy to bring your furry friend wherever you go, with features like sherpa bedding, water-resistant lining, and multiple pockets (for both of you). Designed to work seamlessly with the way you already travel, it has latches that can fasten it to a car seat belt and a sleeve that can secure it to any Away luggage.', 6500, 'Nylon, leather', '47.5 cm x 27.4 cm x 27.3 cm', 'bag', 'Nylon'),
-('Packing Cubes', 'Our packing cubes compress and organize everything inside your suitcase, from socks to shirts to even your bulkiest items. Made from water-resistant nylon that protects your clothes, these travel must-haves are designed with a mesh panel to make it easy to find what you need without fully unpacking. Thoughtfully packaged as a set of four, our packing cubes are designed to fit perfectly inside our luggage.', 2600, 'Nylon', '25.5 cm x 10.5 cm x 11 cm', 'accessory', 'Coast'),
+('The Pet Carrier', 'The Pet Carrier makes it easy to bring your furry friend wherever you go, with features like sherpa bedding, water-resistant lining, and multiple pockets (for both of you). Designed to work seamlessly with the way you already travel, it has latches that can fasten it to a car seat belt and a sleeve that can secure it to any Away luggage.', 6500, 'Nylon, leather', '47.5 cm x 27.4 cm x 27.3 cm', 'bag', 'Pantone'),
+('Packing Cubes (Set of 4)', 'Our packing cubes compress and organize everything inside your suitcase, from socks to shirts to even your bulkiest items. Made from water-resistant nylon that protects your clothes, these travel must-haves are designed with a mesh panel to make it easy to find what you need without fully unpacking. Thoughtfully packaged as a set of four, our packing cubes are designed to fit perfectly inside our luggage.', 2600, 'Nylon', '25.5 cm x 10.5 cm x 11 cm', 'accessory', 'Coast'),
 ('The Travel Carrier', 'Travel together with this super comfortable, modular Travel Carrier. With breathable mesh walls, a dual use leash / shoulder strap, and an interior cushion that folds out to become a comfortable dog bed, our airline compliant carrier is the home away from home your dog deserves.', 6000, 'Polyester', '45 cm x 28 cm x 25 cm', 'bag', 'Black'),
-('The Everyday Carrier', 'The name says it all! Perfect for daily use, this Carrier is, equipped with a 100% recycled knit body (made from 80 water bottles), dual-length carrying straps, 4x pockets for belongings, a machine-washable mat and so much more. It’s everything you need for toting your pup, be it al fresco dining or subway commutes.', 5600, 'Recycled Post-Consumer Polyester from Plastic Water Bottles', '54.6 cm x 19 cm x 36.2 cm', 'bag', 'Black');
+('The Everyday Carrier', 'The name says it all! Perfect for daily use, this Carrier is, equipped with a 100% recycled knit body (made from 80 water bottles), dual-length carrying straps, 4x pockets for belongings, a machine-washable mat and so much more. It’s everything you need for toting your pup, be it al fresco dining or subway commutes.', 5600, 'Recycled Post-Consumer Polyester from Plastic Water Bottles', '54.6 cm x 19 cm x 36.2 cm', 'bag', 'Black'),
+('Packing Cubes (Set of 6)', 'Our packing cubes compress and organize everything inside your suitcase, from socks to shirts to even your bulkiest items. Made from water-resistant nylon that protects your clothes, these travel must-haves are designed with a mesh panel to make it easy to find what you need without fully unpacking. Thoughtfully packaged as a set of four, our packing cubes are designed to fit perfectly inside our luggage.', 3200, 'Nylon', '25.5 cm x 10.5 cm x 11 cm', 'accessory', 'Sand'),
+('Hanging Toiltery Bag', 'The Hanging Toiletry Bag is made with water-resistant nylon and a coated spill-proof interior. It’s thoughtfully designed with a small hook so you can hang it on a door or wall, contains three mesh pouches that provide easy storage and convenient access to your favorite travel essentials, and includes a clear, removable pouch for smaller items or liquid products.', 2200, 'Nylon', '18 cm x 10.5 cm x 11 cm', 'accessory', 'Green Nylon');
 
 INSERT INTO product_pictures (product_id, url, is_thumbnail)
 VALUES 
@@ -27,4 +29,10 @@ VALUES
 (3, 'https://imgur.com/mxccwbX.png', false),
 (3, 'https://imgur.com/77JZFZ9.png', false),
 (4, 'https://imgur.com/YLWviod.png', true),
-(4, 'https://imgur.com/J0V8xfl.png', false);
+(4, 'https://imgur.com/J0V8xfl.png', false),
+(5, 'https://imgur.com/velLnBm.png', true),
+(5, 'https://imgur.com/IGZptlw.png', false),
+(5, 'https://imgur.com/5Yy50Fb.png', false),
+(6, 'https://imgur.com/zq8yWEW.png', true),
+(6, 'https://imgur.com/umNxeDP.png', false),
+(6, 'https://imgur.com/ZghFHjP.png', false);
