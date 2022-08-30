@@ -34,7 +34,7 @@ header .logo .logo-link {
 header li,
 header a,
 header button {
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: "IBM Plex Sans", sans-serif;
   font-weight: 800;
   background-color: white;
 }
@@ -54,12 +54,13 @@ header .nav_links li a {
   transition: all 0.3s ease 0s;
   text-decoration: none;
   color: #000;
+  font-size: 1.25rem;
 }
 
 header button {
   border: none;
   cursor: pointer;
-  font-size: medium;
+  font-size: 1.25rem;
   -webkit-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
 }
@@ -231,7 +232,7 @@ footer .footer-content h3 {
 }
 
 footer .footer-content p {
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: "IBM Plex Sans", sans-serif;
   font-weight: 800;
 }
 
@@ -252,8 +253,17 @@ footer .footer-content p {
   padding: 10px 0px 30px 0px;
 }
 
+.grid-container {
+  display: -ms-grid;
+  display: grid;
+  gap: 1rem;
+  -ms-grid-columns: (minmax(500px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  padding: 25px 20px 0px 20px;
+  background-color: #f3ebdb;
+}
+
 .product-list {
-  background-color: #f6f2e6;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -261,12 +271,37 @@ footer .footer-content p {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  border: 1px;
+  border-style: groove;
+  border-color: #000;
+  margin: auto;
 }
 
-.product-list .product-img {
-  background-color: #f6f2e6;
+.product-list .product-img img {
+  width: 100%;
+}
+
+.product-list .product-title {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.product-list .product-color {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 800;
+  font-size: 1rem;
+  color: #333;
+  padding: 8px 0px 8px 0px;
+}
+
+.product-list .product-price {
+  padding-bottom: 9px;
 }
 /*# sourceMappingURL=App.css.map */
