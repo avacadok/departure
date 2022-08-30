@@ -2,17 +2,8 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Product from "../Product";
 
-const Accessories = () => {
-  const [accessories, setAccessories] = useState({});
-
-  useEffect(() => {
-    axios.get('/api/accessories')
-      .then((result) => {
-        setAccessories({ ...result.data });
-      })
-      .catch((err) => console.log("err", err));
-  }, []);
-  console.log("accessories", accessories)
+const Accessories = (props) => {
+  const {accessories} = props;
 
   const AccessoriesDetail = Object.values(accessories).map((accessory, index) => {
     return (

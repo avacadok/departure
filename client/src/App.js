@@ -9,6 +9,24 @@ import Accessories from './components/Accessories';
 import NewArrivals from './components/NewArrivals';
 
 function App() {
+  const [newArrivals, setNewArrivals] = useState({});
+  const [bags, SetBags] = useState({});
+  const [accessories, setAccessories] = useState({});
+
+  const endpoints = [
+    '/api/new-arrivals',
+    '/api/bags',
+    '/api/accessories'
+  ];
+
+  useEffect(() => {
+    Promise.all(endpoints.map((api) => axios.get(api)))
+    .then(([{data: newArrivals}, {data: bags}, {data:accessories}]) => {
+      setNewArrivals({...newArrivals})
+      SetBags({...bags})
+      setAccessories({...accessories})
+    })
+  }, [])
 
   return (
     <div>
@@ -27,9 +45,9 @@ function App() {
       <Routes>
 
         <Route path='/' element={<LandingPage />} />
-        <Route path='/new-arrivals' element={<NewArrivals />} />
-        <Route path='/bags' element={<Bags />} />
-        <Route path='/accessories' element={<Accessories />} />
+        <Route path='/new-arrivals' element={<NewArrivals newArrivals={newArrivals}/>} />
+        <Route path='/bags' element={<Bags bags={bags}/>} />
+        <Route path='/accessories' element={<Accessories accessories={accessories}/>} />
 
       </Routes>
 

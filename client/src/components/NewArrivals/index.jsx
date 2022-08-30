@@ -2,16 +2,8 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Product from "../Product";
 
-const NewArrivals = () => {
-  const [newArrivals, setNewArrivals] = useState({});
-
-  useEffect(() => {
-    axios.get('/api/new-arrivals')
-      .then((result) => {
-        setNewArrivals({ ...result.data });
-      })
-      .catch((err) => console.log("err", err));
-  }, []);
+const NewArrivals = (props) => {
+  const { newArrivals } = props;
 
   const newArrivalsDetail = Object.values(newArrivals).map((newArrival, index) => {
     return (
@@ -26,11 +18,11 @@ const NewArrivals = () => {
     )
   })
 
-  return(
+  return (
     <>
-    <h3 className="page-title">New Arrivals</h3>
-    <div className="grid-container">
-      {newArrivalsDetail}
+      <h3 className="page-title">New Arrivals</h3>
+      <div className="grid-container">
+        {newArrivalsDetail}
       </div>
     </>
   )
