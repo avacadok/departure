@@ -8,6 +8,7 @@ import Bags from './components/Bags';
 import Accessories from './components/Accessories';
 import NewArrivals from './components/NewArrivals';
 import Login from './components/Login';
+import Register from './components/Register';
 
 function App() {
   const [newArrivals, setNewArrivals] = useState({});
@@ -50,6 +51,7 @@ function App() {
         <Route path='/bags' element={<Bags bags={bags} />} />
         <Route path='/accessories' element={<Accessories accessories={accessories} />} />
         <Route path='/login' element={<Login />} />
+        <Route path='/register' element={<Register />} />
 
       </Routes>
 
