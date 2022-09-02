@@ -93,20 +93,4 @@ router.get("/accessories", (req, res) => {
     .catch(err => console.log("err from /accessories", err))
 });
 
-//Post router for add new users to the datebase
-router.post('/register', (req, res) => {
-  const query = `
-  INSERT INTO users 
-    (name, email, password)
-  VALUES
-    ($1, $2, $3);
-  `;
-  return db
-    .query(query, [username, email, password])
-    .then(({ rows: users }) => {
-      res.json(users);
-    })
-    .catch(err => console.log('err from post register', err))
-})
-
 module.exports = router;
