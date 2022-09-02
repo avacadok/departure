@@ -1,32 +1,22 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-
-/*Create regex for the requirement we will applied on username and password.
-username needs to start with letter and followed by letters or numbers or '-' '_' min 6 and max 10 characters
-*/
-const USER_REGEX = /^[a-zA-Z][a-zA-Z0-9-_]{5,10}$/;
-const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,20}$/;
+import axios from "axios";
 
 const Register = () => {
-  //set focus to user input when the component loads
-  const userRef = useRef();
-  //set focus to err if there is one
-  const errRef = useRef();
-  //states for username
   const [username, setUsername] = useState('');
-  const [vaildName, setVaildName] = useState(false);
-  const [userFocus, setUserFocus] = useState(false);
-  //state for password 
   const [password, setPassword] = useState('');
-  const [vaildPassword, setVaildPassword] = useState(false);
-  const [passwordFocus, setPasswordFcous] = useState(false);
-  //state for password confirmation
   const [matchPassword, setMatchPassword] = useState('');
-  const [validMatch, setValidMatch] = useState(false);
-  const [matchFocus, setMatchFocus] = useState(false)
-  //state for err msg for successful registration msg
-  const [errMsg, setErrMsg] = useState('');
-  const [success, setSuccess] = useState(false);
+  const [email, setEmail] = useState('');
+  const [matchEmail, setMatchEmail] = useState('');
+
+  const userRegister = (e) => {
+    e.preventDefault();
+    axios.post('/register', { username, email, password })
+      .then((response) => {
+        console.log(response)
+      })
+      .catch(err => console.log("err from register", err))
+  }
 
   return (
     <>
@@ -39,33 +29,42 @@ const Register = () => {
         </div>
 
         <div className="input-username">
-          <input type={'name'} placeholder="Username" onChange={(e) => setUsername(e.target.value)} >
+          <input type={'name'} 
+          placeholder="Username" 
+          onChange={(e) => setUsername(e.target.value)} 
+          value={username}>
           </input>
         </div>
 
         <div className="input-email">
-          <input type={'email'} placeholder="Email address" >
+          <input type={'email'} 
+          placeholder="Email address"
+          onChange={(e) => setEmail(e.target.value)}
+          value={email}>
           </input>
         </div>
 
-        <div className="input-email">
+        {/* <div className="input-email">
           <input type={'email'} placeholder="Confirm email" >
           </input>
-        </div>
+        </div> */}
 
         <form className="input-password">
-          <input type={'password'} placeholder="Password"
-            autoComplete="on"
-            onChange={(e) => setPassword(e.target.value)}>
+          <input type={'password'} 
+          placeholder="Password"
+          autoComplete="on"
+          onChange={(e) => setPassword(e.target.value)}
+          value={password}>
           </input>
         </form>
 
-        <form className="input-password">
+        {/* <form className="input-password">
           <input type={'password'} placeholder="Confirm password" autoComplete="on">
           </input>
-        </form>
+        </form> */}
 
-        <button className="confirm-button" type="submit">
+        <button className="confirm-button" type="submit"
+          onClick={userRegister} >
           Sign up
         </button>
 
