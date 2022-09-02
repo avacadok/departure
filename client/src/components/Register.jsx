@@ -1,7 +1,32 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 
+/*Create regex for the requirement we will applied on username and password.
+username needs to start with letter and followed by letters or numbers or '-' '_' min 6 and max 10 characters
+*/
+const USER_REGEX = /^[a-zA-Z][a-zA-Z0-9-_]{5,10}$/;
+const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,20}$/;
+
 const Register = () => {
+  //set focus to user input when the component loads
+  const userRef = useRef();
+  //set focus to err if there is one
+  const errRef = useRef();
+  //states for username
+  const [username, setUsername] = useState('');
+  const [vaildName, setVaildName] = useState(false);
+  const [userFocus, setUserFocus] = useState(false);
+  //state for password 
+  const [password, setPassword] = useState('');
+  const [vaildPassword, setVaildPassword] = useState(false);
+  const [passwordFocus, setPasswordFcous] = useState(false);
+  //state for password confirmation
+  const [matchPassword, setMatchPassword] = useState('');
+  const [validMatch, setValidMatch] = useState(false);
+  const [matchFocus, setMatchFocus] = useState(false)
+  //state for err msg for successful registration msg
+  const [errMsg, setErrMsg] = useState('');
+  const [success, setSuccess] = useState(false);
 
   return (
     <>
@@ -14,7 +39,7 @@ const Register = () => {
         </div>
 
         <div className="input-username">
-          <input type={'name'} placeholder="Username" >
+          <input type={'name'} placeholder="Username" onChange={(e) => setUsername(e.target.value)} >
           </input>
         </div>
 
@@ -29,8 +54,9 @@ const Register = () => {
         </div>
 
         <form className="input-password">
-          <input type={'password'} placeholder="Password" 
-          autoComplete="on">
+          <input type={'password'} placeholder="Password"
+            autoComplete="on"
+            onChange={(e) => setPassword(e.target.value)}>
           </input>
         </form>
 
@@ -39,9 +65,9 @@ const Register = () => {
           </input>
         </form>
 
-        <div className="confirm-button">
+        <button className="confirm-button" type="submit">
           Sign up
-        </div>
+        </button>
 
       </section>
     </>
