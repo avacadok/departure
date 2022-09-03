@@ -151,6 +151,7 @@ footer {
   height: auto;
   width: 100%;
   padding-top: 60px;
+  margin-top: 50px;
 
   .footer-content {
     display: flex;
@@ -332,4 +333,16 @@ footer {
     background-color: #000;
     cursor: pointer;
   }
+}
+
+.err-msg {
+  color: rgba(191, 0, 0, 0.704);
+  padding: 15px;
+}
+
+.register-msg {
+  padding: 15px;
+  font-weight: 500;
+  font-size: large;
+  color: rgb(33, 32, 32);
 }

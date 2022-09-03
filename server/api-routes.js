@@ -93,5 +93,4 @@ router.get("/accessories", (req, res) => {
     .catch(err => console.log("err from /accessories", err))
 });
 
-
 module.exports = router;
