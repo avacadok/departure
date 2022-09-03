@@ -1,7 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
-const Login = () => {
+const Login = (props) => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    axios.post('/login', { email, password })
+    .then((response) => {
+      console.log(response)
+    })
+    .catch(err => console.log("err from register", err))
+  }
 
   return (
     <>
@@ -14,19 +26,26 @@ const Login = () => {
         </div>
 
         <div className="input-email">
-          <input type={'email'} placeholder="Email address" >
+          <input type={'email'} 
+          placeholder="Email address"
+          onChange={(e) => setEmail(e.target.value)}
+          value={email} >
           </input>
         </div>
 
         <form className="input-password">
-          <input type={'password'} placeholder="Password" 
-          autoComplete="on">
+          <input type={'password'} 
+          placeholder="Password"
+          autoComplete="on"
+          onChange={(e) => setPassword(e.target.value)}
+          value={password}>
           </input>
         </form>
 
-        <div className="confirm-button">
+        <button className="confirm-button" type="submit" 
+        onClick={handleLogin}>
           Log in
-        </div>
+        </button>
 
       </section>
     </>
