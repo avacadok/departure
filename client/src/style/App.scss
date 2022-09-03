@@ -16,6 +16,8 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 20px;
+  position: sticky;
+  top: 0;
 
   .logo .logo-link {
     font-family: 'Noto Sans JP', sans-serif;
@@ -332,4 +334,9 @@ footer {
     background-color: #000;
     cursor: pointer;
   }
+}
+
+.err-msg {
+  color: rgba(191, 0, 0, 0.704);
+  padding: 15px;
 }
