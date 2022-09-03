@@ -14,11 +14,13 @@ const Login = (props) => {
     .then((response) => {
       console.log(response.data)
       if (response.data.error) {
-        setErrMsg(response.data.error)
+        setErrMsg(response.data.error);
         setShow(true);
       } else {
         props.setLoginStatus(true)
-        setShow(false)
+        setShow(false);
+        setEmail('');
+        setPassword('');
       }
     })
     .catch(err => console.log("err from register", err))
@@ -35,7 +37,7 @@ const Login = (props) => {
         </div>
 
         {show ? <p className="err-msg"> 
-        <i class="fa-solid fa-triangle-exclamation"></i> {errMsg} </p> : <></>}
+        <i className="fa-solid fa-triangle-exclamation"></i> {errMsg} </p> : <></>}
 
         <div className="input-email">
           <input type={'email'} 
