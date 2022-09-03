@@ -14,6 +14,7 @@ function App() {
   const [newArrivals, setNewArrivals] = useState({});
   const [bags, SetBags] = useState({});
   const [accessories, setAccessories] = useState({});
+  const [loginStatus , setLoginStatus] = useState(false);
 
   const endpoints = [
     '/api/new-arrivals',
@@ -50,7 +51,7 @@ function App() {
         <Route path='/new-arrivals' element={<NewArrivals newArrivals={newArrivals} />} />
         <Route path='/bags' element={<Bags bags={bags} />} />
         <Route path='/accessories' element={<Accessories accessories={accessories} />} />
-        <Route path='/login' element={<Login />} />
+        <Route path='/login' element={<Login setLoginStatus={setLoginStatus}/>} />
         <Route path='/register' element={<Register />} />
 
       </Routes>

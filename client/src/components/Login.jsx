@@ -1,16 +1,25 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
 const Login = (props) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [errMsg, setErrMsg] = useState('');
+  const [show, setShow] = useState(false)
 
   const handleLogin = (e) => {
     e.preventDefault();
     axios.post('/login', { email, password })
     .then((response) => {
-      console.log(response)
+      console.log(response.data)
+      if (response.data.error) {
+        setErrMsg(response.data.error)
+        setShow(true);
+      } else {
+        props.setLoginStatus(true)
+        setShow(false)
+      }
     })
     .catch(err => console.log("err from register", err))
   }
@@ -24,6 +33,9 @@ const Login = (props) => {
           <Link to={'/login'} className="user-login">Log in</Link>
           <Link to={'/register'} className="user-signup">Sign Up</Link>
         </div>
+
+        {show ? <p className="err-msg"> 
+        <i class="fa-solid fa-triangle-exclamation"></i> {errMsg} </p> : <></>}
 
         <div className="input-email">
           <input type={'email'} 

@@ -61,12 +61,12 @@ App.post('/login', (req, res) => {
   `;
   return db
     .query(query, [email, password])
-    .then(({rows: user}) => {
+    .then(({ rows: user }) => {
       console.log("user", user)
       if (user.length > 0) {
         res.send(user)
       } else {
-        res.send({ message: "Please enter a valid email and password." });
+        res.send({ error : "Please enter a valid email and password" });
       }
     })
     .catch(err => console.log('err from post login', err))
