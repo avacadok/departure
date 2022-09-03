@@ -15,15 +15,15 @@ App.use(
   cookieSession({
     name: "session",
     keys: ["my cookie"],
-    httpOnly: false,
+    httpOnly: true,
   })
 );
 
 //ROUTES
-App.get('/api', (req, res) => 
-res.json({
-  "users": ["ava", "brandon", "snowie"]
-}));
+App.get('/api', (req, res) =>
+  res.json({
+    "users": ["ava", "brandon", "snowie"]
+  }));
 
 //Post router for add new users to the datebase
 App.post('/register', (req, res) => {
@@ -42,10 +42,39 @@ App.post('/register', (req, res) => {
       res.json(users)
     })
     .catch(err => console.log('err from post register', err))
-})
+});
+
+//Post request for user login
+App.post('/login', (req, res) => {
+  const { email, password } = req.body;
+  console.log(req.body)
+  const query = `
+  SELECT 
+    email, 
+    password, 
+    id
+  FROM 
+    users
+  WHERE 
+    email = $1
+    AND password = $2;
+  `;
+  return db
+    .query(query, [email, password])
+    .then(({rows: user}) => {
+      console.log("user", user)
+      if (user.length > 0) {
+        res.send(user)
+      } else {
+        res.send({ message: "Please enter a valid email and password." });
+      }
+    })
+    .catch(err => console.log('err from post login', err))
+});
 
 //GET ALL API ROUTES
 const apiRoutes = require("./api-routes");
+const { response } = require('express');
 App.use("/api", apiRoutes)
 
 
