@@ -8,12 +8,17 @@ const Register = () => {
   const [matchPassword, setMatchPassword] = useState('');
   const [email, setEmail] = useState('');
   const [matchEmail, setMatchEmail] = useState('');
+  const [registerStat, setRegisterStat] = useState(false);
 
   const userRegister = (e) => {
     e.preventDefault();
     axios.post('/register', { username, email, password })
       .then((response) => {
-        console.log(response)
+        console.log(response);
+        setRegisterStat(true);
+        setUsername('');
+        setEmail('');
+        setPassword('');
       })
       .catch(err => console.log("err from register", err))
   }
@@ -27,6 +32,8 @@ const Register = () => {
           <Link to={'/login'} className="user-login">Log in</Link>
           <Link to={'/register'} className="user-signup">Sign Up</Link>
         </div>
+
+        {registerStat ? <p className="register-msg">Welcome to Depawture <b>PAWRENT</b>, please click the <b>LOG IN</b> button to sign into your account 🖤</p> : <></>}
 
         <div className="input-username">
           <input type={'name'} 
