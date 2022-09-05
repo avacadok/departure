@@ -3,6 +3,8 @@ const App = Express();
 const BodyParser = require('body-parser');
 const Port = 8080;
 const cookieSession = require("cookie-session");
+const bcrypt = require('bcrypt');
+const saltRounds = 10;
 
 //DATABASE 
 const db = require('./database');
@@ -28,20 +30,26 @@ App.get('/api', (req, res) =>
 //Post router for add new users to the datebase
 App.post('/register', (req, res) => {
   const { username, email, password } = req.body;
-  console.log(req.body)
   const query = `
-  INSERT INTO users 
-    (name, email, password)
-  VALUES
-    ($1, $2, $3)
-  RETURNING *;
-  `;
-  return db
-    .query(query, [username, email, password])
-    .then(({ rows: users }) => {
-      res.json(users)
-    })
-    .catch(err => console.log('err from post register', err))
+    INSERT INTO users 
+      (name, email, password)
+    VALUES
+      ($1, $2, $3)
+    RETURNING *;
+    `;
+
+  //Use bcrypt to hash password
+  bcrypt.hash(password, saltRounds, (error, hash) => {
+    if (error) {
+      console.log("bcrypt err", error)
+    }
+    return db
+      .query(query, [username, email, hash])
+      .then(({ rows: users }) => {
+        res.json(users)
+      })
+      .catch(err => console.log('err from post register', err))
+  })
 });
 
 //Post request for user login
@@ -56,17 +64,23 @@ App.post('/login', (req, res) => {
   FROM 
     users
   WHERE 
-    email = $1
-    AND password = $2;
+    email = $1;
   `;
   return db
-    .query(query, [email, password])
+    .query(query, [email])
     .then(({ rows: user }) => {
       console.log("user", user)
       if (user.length > 0) {
-        res.send(user)
+        //Get the bcrypt password
+        bcrypt.compare(password, user[0].password, (error, response) => {
+          if (response) {
+            res.send(user);
+          } else {
+            res.send({ error: "Please enter a valid email and password" });
+          }
+        })
       } else {
-        res.send({ error : "Please enter a valid email and password" });
+        res.send({ error: "Please enter a valid email and password" });
       }
     })
     .catch(err => console.log('err from post login', err))
