@@ -93,4 +93,31 @@ router.get("/accessories", (req, res) => {
     .catch(err => console.log("err from /accessories", err))
 });
 
+//Create routes for all products
+router.get("/all-products", (req, res) => {
+  const query = `
+    SELECT 
+      pp.product_id,
+      p.name,
+      p.description,
+      p.price_cents,
+      p.material,
+      p.size,
+      p.category,
+      p.color,
+      ARRAY_AGG(pp.url) AS list_of_pictures
+    FROM products AS p
+    INNER JOIN product_pictures AS pp
+      ON p.id = pp.product_id
+    GROUP BY 
+      1, 2, 3, 4, 5, 6, 7, 8
+    ;`;
+  return db
+    .query(query)
+    .then(({ rows: products }) => {
+      res.json(products);
+    })
+    .catch(err => console.log("err from /all-products", err))
+});
+
 module.exports = router;
