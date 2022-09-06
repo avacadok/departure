@@ -2,13 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const Product = (props) => {
-  const { name, id, webname, color, material, desciption, price, photos } = props
+  const { name, id, color, price, photos } = props
   //can make a function to change the picture on hover
 
   return (
     <>
       <section className="product-list">
-        <Link to={`/product/${id}`}>
+        <Link to={`/product/${id}`} className="link">
           <div className="product-img">
             <img src={photos[0]} alt="product-img"
               onMouseEnter={e => e.currentTarget.src = photos[1]}
