@@ -4,12 +4,14 @@ import Product from "../Product";
 
 const Accessories = (props) => {
   const {accessories} = props;
+  console.log(props)
 
   const AccessoriesDetail = Object.values(accessories).map((accessory, index) => {
     return (
       <Product
         key={index}
         name={accessory.name}
+        id={accessory.product_id}
         color={accessory.color}
         material={accessory.material}
         description={accessory.description}
