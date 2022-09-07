@@ -361,11 +361,54 @@ footer {
 
   .product-details {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    background-color: $maincolor;
 
-    div img {
-      width: 100%;
-      height: 100%;
+    .container-slider {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: $maincolor;
+
+      .right-arrow {
+        position: absolute;
+        top: 50%;
+        font-size: 2rem;
+        right: 32px;
+        color: #000;
+        z-index: 10;
+        cursor: pointer;
+        user-select: none;
+        background-color: transparent;
+      }
+
+      .left-arrow {
+        position: absolute;
+        top: 50%;
+        font-size: 2rem;
+        left: 32px;
+        color: #000;
+        z-index: 10;
+        cursor: pointer;
+        user-select: none;
+        background-color: transparent;
+      }
+
+      .slide {
+        transition: transform ease-in-out 0.3s;
+        opacity: 0;
+        
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      .slide.active {
+        opacity: 1;
+        transition: opacity ease-in-out 0.3s;
+      }
     }
   }
 
@@ -376,6 +419,7 @@ footer {
       margin: 20px;
       background-color: $maincolor;
       font-size: 1.25rem;
+      padding-top: 20px;
 
       h2 {
         background-color: $maincolor;
@@ -419,7 +463,7 @@ footer {
       margin: 45px 20px 20px 20px;
       background-color: $maincolor;
       line-height: 1.3rem;
-      font-size: 1.1rem;
+      font-size: 1.2rem;
     }
 
     .product-detail-material {
@@ -428,6 +472,7 @@ footer {
       margin: 20px;
       background-color: $maincolor;
       font-size: 1.1rem;
+      padding-bottom: 120px;
 
       b,
       div {

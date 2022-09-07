@@ -422,13 +422,72 @@ footer .footer-content p {
 .product-info .product-details {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(400px, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  -ms-grid-columns: (minmax(500px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  background-color: #f6f1e8;
 }
 
-.product-info .product-details div img {
+.product-info .product-details .container-slider {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #f6f1e8;
+}
+
+.product-info .product-details .container-slider .right-arrow {
+  position: absolute;
+  top: 50%;
+  font-size: 2rem;
+  right: 32px;
+  color: #000;
+  z-index: 10;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  background-color: transparent;
+}
+
+.product-info .product-details .container-slider .left-arrow {
+  position: absolute;
+  top: 50%;
+  font-size: 2rem;
+  left: 32px;
+  color: #000;
+  z-index: 10;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  background-color: transparent;
+}
+
+.product-info .product-details .container-slider .slide {
+  -webkit-transition: -webkit-transform ease-in-out 0.3s;
+  transition: -webkit-transform ease-in-out 0.3s;
+  transition: transform ease-in-out 0.3s;
+  transition: transform ease-in-out 0.3s, -webkit-transform ease-in-out 0.3s;
+  opacity: 0;
+}
+
+.product-info .product-details .container-slider .slide img {
   width: 100%;
   height: 100%;
+}
+
+.product-info .product-details .container-slider .slide.active {
+  opacity: 1;
+  -webkit-transition: opacity ease-in-out 0.3s;
+  transition: opacity ease-in-out 0.3s;
 }
 
 .product-info .product-detail-info {
@@ -439,6 +498,7 @@ footer .footer-content p {
   margin: 20px;
   background-color: #f6f1e8;
   font-size: 1.25rem;
+  padding-top: 20px;
 }
 
 .product-info .product-detail-info .product-detail-name h2 {
@@ -488,7 +548,7 @@ footer .footer-content p {
   margin: 45px 20px 20px 20px;
   background-color: #f6f1e8;
   line-height: 1.3rem;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
 }
 
 .product-info .product-detail-info .product-detail-material {
@@ -502,6 +562,7 @@ footer .footer-content p {
   margin: 20px;
   background-color: #f6f1e8;
   font-size: 1.1rem;
+  padding-bottom: 120px;
 }
 
 .product-info .product-detail-info .product-detail-material b,
