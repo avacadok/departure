@@ -9,10 +9,9 @@ const NewArrivals = (props) => {
     return (
       <Product
         key={index}
+        id={newArrival.product_id}
         name={newArrival.name}
         color={newArrival.color}
-        material={newArrival.material}
-        description={newArrival.description}
         price={newArrival.price_cents}
         photos={newArrival.list_of_pictures} />
     )

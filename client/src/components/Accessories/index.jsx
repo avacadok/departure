@@ -10,9 +10,8 @@ const Accessories = (props) => {
       <Product
         key={index}
         name={accessory.name}
+        id={accessory.product_id}
         color={accessory.color}
-        material={accessory.material}
-        description={accessory.description}
         price={accessory.price_cents}
         photos={accessory.list_of_pictures} />
     )

@@ -9,10 +9,9 @@ const Bags = (props) => {
     return (
       <Product
         key={index}
+        id={bag.product_id}
         name={bag.name}
         color={bag.color}
-        material={bag.material}
-        description={bag.description}
         price={bag.price_cents}
         photos={bag.list_of_pictures} />
     )
