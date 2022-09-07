@@ -1,14 +1,11 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
 import { useParams } from "react-router-dom";
+import ImageSlider from './ImageSlider'
 
 const ProductDetail = (props) => {
   const { id } = useParams();
   const { products } = props;
   const productId = id - 1;
-
-  console.log("products", products[productId])
-  console.log("id", id)
 
   if (!products) {
     return null;
@@ -17,10 +14,7 @@ const ProductDetail = (props) => {
   return (
     <div className="product-info">
       <section className="product-details">
-        <div className="product-detail-img">
-          <img src={products[productId].list_of_pictures[0]} >
-          </img>
-        </div>
+        <ImageSlider photos={products[productId].list_of_pictures} />
 
         <div className="product-detail-info">
           <div className="product-detail-name">
@@ -28,12 +22,11 @@ const ProductDetail = (props) => {
           </div>
 
           <div className="product-detail-price">
-            C ${products[productId].price_cents/100}
+            C ${products[productId].price_cents / 100}
           </div>
 
           <div className="product-detail-color">
             <p><b>Color:</b> {products[productId].color}</p>
-            <i className="fa-solid fa-circle"></i>
           </div>
 
           <div className="product-detail-cart">
@@ -53,10 +46,6 @@ const ProductDetail = (props) => {
               <b>Size:</b> {products[productId].size}
             </div>
           </div>
-{/* 
-          <div>
-            <b>Size:</b> {products[productId].size}
-          </div> */}
         </div>
 
       </section>
