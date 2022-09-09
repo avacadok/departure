@@ -339,7 +339,7 @@ footer {
 }
 
 .err-msg {
-  color: rgba(191, 0, 0, 0.704);
+  color: red;
   padding: 15px;
 }
 
@@ -479,6 +479,23 @@ footer {
         background-color: $maincolor;
       }
     }
+  }
+
+}
+
+.form-input {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  span{
+    color: red;
+    font-size: 0.9rem;
+    display: none;
+  }
+
+  input:invalid ~ span {
+    display: block;
   }
 
 }
