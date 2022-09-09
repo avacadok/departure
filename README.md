@@ -7,19 +7,19 @@ This project was built with HTML, SCSS, JS, and REACT for front-end and EXPRESS 
 ## FINAL PRODUCT
 
 ### Main Page
-!["main page"]()
+!["main page"](https://github.com/avacadok/departure/blob/main/doc/main-page.png)
 
 ## Products
-!["product display"]()
+!["product display"](https://github.com/avacadok/departure/blob/main/doc/product-lists.png)
 
 ## Product details
-!["product detail"]()
+!["product detail"](https://github.com/avacadok/departure/blob/main/doc/product-detail.png)
 
 ## Login
 !["Login"]()
 
 ## Sign up
-!["Sign up"]()
+!["Sign up"](https://github.com/avacadok/departure/blob/main/doc/signup.png)
 
 ## User Stories
 
