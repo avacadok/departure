@@ -389,7 +389,7 @@ footer .footer-content p {
 }
 
 .err-msg {
-  color: rgba(191, 0, 0, 0.704);
+  color: red;
   padding: 15px;
 }
 
@@ -568,5 +568,28 @@ footer .footer-content p {
 .product-info .product-detail-info .product-detail-material b,
 .product-info .product-detail-info .product-detail-material div {
   background-color: #f6f1e8;
+}
+
+.form-input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.form-input span {
+  color: red;
+  font-size: 0.9rem;
+  display: none;
+}
+
+.form-input input:invalid ~ span {
+  display: block;
 }
 /*# sourceMappingURL=App.css.map */

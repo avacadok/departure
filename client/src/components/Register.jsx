@@ -1,13 +1,13 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import Form from "./Form";
 
 const Register = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [matchPassword, setMatchPassword] = useState('');
   const [email, setEmail] = useState('');
-  const [matchEmail, setMatchEmail] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
   const [registerStat, setRegisterStat] = useState(false);
 
   const userRegister = (e) => {
@@ -22,7 +22,6 @@ const Register = () => {
       })
       .catch(err => console.log("err from register", err))
   }
-
   return (
     <>
       <div className="page-title">Hello Traveler</div>
@@ -35,45 +34,35 @@ const Register = () => {
 
         {registerStat ? <p className="register-msg">Welcome to Depawture <b>PAWRENT</b>, please click the <b>LOG IN</b> button to sign into your account 🖤</p> : <></>}
 
-        <div className="input-username">
-          <input type={'name'} 
-          placeholder="Username" 
+        <form onSubmit={userRegister}>
+
+          <Form placeholder={'Username'} type={'text'} value={username} 
           onChange={(e) => setUsername(e.target.value)} 
-          value={username}>
-          </input>
-        </div>
+          errorMsg={'Username should be 3 to 12 characters and should not include any special characters'} required={true} 
+          pattern={'^[A-Za-z0-9]{3,12}'} />
 
-        <div className="input-email">
-          <input type={'email'} 
-          placeholder="Email address"
-          onChange={(e) => setEmail(e.target.value)}
-          value={email}>
-          </input>
-        </div>
+          <Form placeholder={'Email'} type={'email'} value={email} 
+          onChange={(e) => setEmail(e.target.value)} 
+          errorMsg={'Please enter a valid email address'} 
+          required={true} />
 
-        {/* <div className="input-email">
-          <input type={'email'} placeholder="Confirm email" >
-          </input>
-        </div> */}
+          <Form placeholder={'Password'} type={'text'} value={password} 
+          onChange={(e) => setPassword(e.target.value)} 
+          errorMsg={'Password should be 6 to 20 characters long and include at least 1 number, 1 letter and 1 special character'} 
+          required={true} 
+          pattern={'^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,20}$'}/>
 
-        <form className="input-password">
-          <input type={'password'} 
-          placeholder="Password"
-          autoComplete="on"
-          onChange={(e) => setPassword(e.target.value)}
-          value={password}>
-          </input>
+          <Form placeholder={'Confirm password'} type={'text'} value={confirmPassword} 
+          onChange={(e) => setConfirmPassword(e.target.value)} 
+          required={true} 
+          errorMsg={'Please enter the same password as above'} 
+          pattern={password}
+          />
+
+          <button className="confirm-button" type="submit" >
+            Sign up
+          </button>
         </form>
-
-        {/* <form className="input-password">
-          <input type={'password'} placeholder="Confirm password" autoComplete="on">
-          </input>
-        </form> */}
-
-        <button className="confirm-button" type="submit"
-          onClick={userRegister} >
-          Sign up
-        </button>
 
       </section>
     </>
